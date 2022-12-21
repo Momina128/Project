@@ -1,6 +1,9 @@
+/// <reference types="cypress" />
+import LoginPage from '../POM/LoginPage.cy.js'
 describe('Amazon website', ()=>{
     beforeEach(() => {
-    cy.visit('https://www.amazon.in/')
+    const Lp=new LoginPage()
+    Lp.visit()
     })
     it('Place order for smart TV', () => {
      cy.get('.hm-icon-label').contains('All').click()
@@ -15,3 +18,4 @@ describe('Amazon website', ()=>{
 
     })
 });
+
